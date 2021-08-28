@@ -1,0 +1,10 @@
+.env
+.md
+.yml
+.git
+README.md
+Dockerfile
+venv
+node_modules
+traefik
+frontend

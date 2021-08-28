@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  momox-api:
+    container_name: momox_api_dev
+    build:
+      context: .
+      dockerfile: '${PWD}/docker/dev.Dockerfile'
+    env_file:
+      - ./dev.env
+    environment:
+      - supervisor_env=dev
+    volumes:
+      - ./momox:/var/app/momox
+    image: momox_api_dev:latest
+    ports:
+      - '8001:8001'
+    depends_on:
+      - base
+      - momox_dev_db
+    networks:
+      - base-network
+    restart: on-failure
+
+  momox_dev_db:
+    image: postgres
+    restart: always
+    env_file:
+      - ./dev.env
+    volumes:
+      - database_dev_vol:/var/lib/postgresql/data
+    networks:
+      - base-network
+
+volumes:
+  database_dev_vol:

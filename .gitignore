@@ -53,6 +53,6 @@ env.bak/
 venv.bak/
 staticfiles/
 media/
-furniturestore/staticfiles/
-furniturestore/media/
+momox/staticfiles/
+momox/media/
 frontend/node_modules/

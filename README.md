@@ -61,7 +61,7 @@ sh scripts/docker_build.sh -s
 ### Step 4
 Open your web browser and view the application using the following urls
 ```
-API Docs:  localhost:8001/
+API Docs:  http://localhost:8001/api/docs#/
 ```
 
 Run unit test
